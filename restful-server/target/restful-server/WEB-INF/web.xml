@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>Restful Server</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<listener>
+		<listener-class>com.kennotek.KennotekGuiceServletContextListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
+		<url-pattern>/knk/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>jersey-filter</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.kennotek.JerseyConfiguration</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jersey.config.server.provider.classnames</param-name>
+			<param-value>org.glassfish.jersey.server.mvc.freemarker.FreemarkerMvcFeature</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jersey-filter</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
