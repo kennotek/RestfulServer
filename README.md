@@ -1,2 +1,2 @@
 # RestfulServer
-Create restful server using Jersey running on GAE
+Restful Server based on Jersey, Guice, Jackson, and GAE (Google AppEngine).
