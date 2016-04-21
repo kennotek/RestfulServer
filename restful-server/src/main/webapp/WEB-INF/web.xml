@@ -6,7 +6,7 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	<listener>
+	<!-- <listener>
 		<listener-class>com.kennotek.KennotekGuiceServletContextListener</listener-class>
 	</listener>
 	<filter>
@@ -17,7 +17,7 @@
 	<filter-mapping>
 		<filter-name>guiceFilter</filter-name>
 		<url-pattern>/knk/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 
 	<servlet>
 		<servlet-name>jersey-filter</servlet-name>
@@ -33,7 +33,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>jersey-filter</servlet-name>
-		<url-pattern>/rest/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
