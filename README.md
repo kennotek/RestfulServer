@@ -1,2 +1,2 @@
 # RestfulServer
-Restful Server based on Jersey, Guice, Jackson, and GAE (Google AppEngine).
+Restful Server based on Maven, Jersey, Guice, Jackson, and GAE (Google AppEngine).
