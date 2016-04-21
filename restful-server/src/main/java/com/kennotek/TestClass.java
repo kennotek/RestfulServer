@@ -2,7 +2,9 @@ package com.kennotek;
 
 import java.util.Date;
 
+import org.jvnet.hk2.annotations.Service;
 
+@Service
 public class TestClass implements IGetDate {
 	private Date date;
 	
